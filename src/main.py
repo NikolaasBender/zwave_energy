@@ -16,12 +16,14 @@ from datetime import datetime
 
 import time
 
+unique_ids = []
+
 device="/dev/ttyACM1"
 #Define some manager options
 options = ZWaveOption(device, \
   config_path="../config", \
   user_path=".", cmd_line="")
-options.set_console_output(True)
+options.set_console_output(False)
 options.set_logging(False)
 options.lock()
 
@@ -34,10 +36,11 @@ def sigint_handler(signal, frame):
 
 # Connect to events
 def value_updated(network, node, value):
-    node.node_id
-    value.label
-    value.data
-    value.instance
+    # node.node_id
+    # value.label
+    # value.data
+    # value.instance
+    print(node.node_id, value, node)
     # publish messages
 
 def main():
