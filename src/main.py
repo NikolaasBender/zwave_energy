@@ -25,21 +25,24 @@ options.set_console_output(True)
 options.set_logging(False)
 options.lock()
 
+# you may want a global publisher up here
+
 exit = False
 def sigint_handler(signal, frame):
     global exit
     exit = True
 
 # Connect to events
-def value_updated(network, node, value, publisher):
+def value_updated(network, node, value):
     node.node_id
     value.label
     value.data
     value.instance
+    # publish messages
 
 def main():
     # initialize ros
-    # DO THIS
+    
 
     # get zwave info
     network = ZWaveNetwork(options, log=None)
