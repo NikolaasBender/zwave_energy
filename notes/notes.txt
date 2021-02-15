@@ -1,0 +1,27 @@
+install openzwave python
+look here for more: https://github.com/OpenZWave/python-openzwave
+sudo apt-get install --force-yes -y make libudev-dev g++ libyaml-dev
+pip3 install python_openzwave
+
+Make sure you allow python to access the stick
+sudo chmod 666 /dev/ttyACM1
+
+CONNECT ZWAVES
+https://www.manualslib.com/manual/1592465/Aeon-Labs-Aeotec-Z-Stick-Gen5.html
+https://aeotec.freshdesk.com/support/solutions/articles/6000056439-z-stick-gen-5-user-manual
+
+Inclusion-Mode: Adding/Including Z-Wave Devices into the Z-Wave Network.
+1. To initiate Inclusion-Mode, unplug Z-Stick from the USB connector and then tap the Action Button. (The blue LED will blink slowly.)
+2. To include a new Z-Wave device into the network, simply go to the device with  Z-Stick and press the button on the device you wish to include. (The blue LED on Z-Stick will blink fast during a network neighbour discovery and stay solid for 2 seconds to indicate successful inclusion of the device into the network.)
+3. The blue LED will then return to blinking slowly, indicating readiness for further device inclusions. Repeat step 2 for each device you wish to include.
+4. Tap Z-Stick’s Action Button to turn it off or it will automatically exit the removal mode after 30 seconds of inactivity.
+
+Removal-Mode: Deleting/ Removing/Excluding Z-Wave Devices from the Z-Wave Network.
+1. To initiate Removal-Mode, unplug  Z-Stick from the USB connector. Then press and hold down the Action Button for approximately 2 seconds. (The orange LED will blink fast.)
+2. To remove a Z-Wave device from the network, simply go to the device with Z-Stick and press the button on the device you wish to remove. (The blue LED on Z-Stick will immediately stay solid for 2 seconds to indicate successful removal from the network.)
+3. The orange LED will then return to blink fast, indicating readiness for further device exclusions. Repeat step 2 for each device you wish to exclude.
+4. Tap Z-Stick’s Action Button to turn it off or it will automatically exit the removal mode after 30 seconds of inactivity.
+
+
+generate key
+cat /dev/urandom | tr -dc '0-9A-F' | fold -w 32 | head -n 1 | sed -e 's/\(..\)/0x\1, /g' -e 's/, $//'
