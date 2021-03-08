@@ -1,0 +1,55 @@
+2021-03-06 20:31:49.605 Always, OpenZwave Version 1.4.3428 Starting Up
+2021-03-06 20:31:49.606 Info, Setting Up Provided Network Key for Secure Communications
+2021-03-06 20:31:49.606 Warning, Failed - Network Key Not Set
+2021-03-06 20:31:49.606 Info, mgr,     Added driver for controller /dev/ttyACM0
+2021-03-06 20:31:49.606 Info,   Opening controller /dev/ttyACM0
+2021-03-06 20:31:49.606 Info, Trying to open serial port /dev/ttyACM0 (attempt 1)
+2021-03-06 20:31:49.606 Error, ERROR: Cannot get exclusive lock for serial port /dev/ttyACM0. Error code 11
+2021-03-06 20:31:49.606 Info, Serial port /dev/ttyACM0 opened (attempt 1)
+2021-03-06 20:31:49.606 Detail, contrlr, Queuing (Command) FUNC_ID_ZW_GET_VERSION: 0x01, 0x03, 0x00, 0x15, 0xe9
+2021-03-06 20:31:49.606 Detail, contrlr, Queuing (Command) FUNC_ID_ZW_MEMORY_GET_ID: 0x01, 0x03, 0x00, 0x20, 0xdc
+2021-03-06 20:31:49.606 Detail, contrlr, Queuing (Command) FUNC_ID_ZW_GET_CONTROLLER_CAPABILITIES: 0x01, 0x03, 0x00, 0x05, 0xf9
+2021-03-06 20:31:49.606 Detail, contrlr, Queuing (Command) FUNC_ID_SERIAL_API_GET_CAPABILITIES: 0x01, 0x03, 0x00, 0x07, 0xfb
+2021-03-06 20:31:49.606 Detail, contrlr, Queuing (Command) FUNC_ID_ZW_GET_SUC_NODE_ID: 0x01, 0x03, 0x00, 0x56, 0xaa
+2021-03-06 20:31:49.606 Detail, 
+2021-03-06 20:31:49.606 Info, contrlr, Sending (Command) message (Callback ID=0x00, Expected Reply=0x15) - FUNC_ID_ZW_GET_VERSION: 0x01, 0x03, 0x00, 0x15, 0xe9
+2021-03-06 20:31:49.607 Warning, WARNING: Out of frame flow! (0x10).  Sending NAK.
+2021-03-06 20:31:49.608 Warning, WARNING: Out of frame flow! (0x2e).  Sending NAK.
+2021-03-06 20:31:49.608 Warning, WARNING: Out of frame flow! (0x34).  Sending NAK.
+2021-03-06 20:31:49.609 Detail, contrlr,   Received: 0x01, 0x01, 0x01
+2021-03-06 20:31:49.609 Warning, contrlr, WARNING: Checksum incorrect - sending NAK
+2021-03-06 20:31:49.609 Detail, contrlr,   Received: 0x01, 0x01, 0x01
+2021-03-06 20:31:49.609 Warning, contrlr, WARNING: Checksum incorrect - sending NAK
+2021-03-06 20:31:49.609 Warning, WARNING: Out of frame flow! (0x34).  Sending NAK.
+2021-03-06 20:31:49.609 Warning, WARNING: Out of frame flow! (0x35).  Sending NAK.
+2021-03-06 20:31:49.612 Detail, contrlr,   Received: 0x01, 0x10, 0x15, 0x2d, 0x61, 0x65, 0x34, 0x35, 0x34, 0x93, 0x01, 0x15, 0x2d, 0x61, 0x20, 0x2e, 0x34, 0x01
+2021-03-06 20:31:49.612 Warning, contrlr, WARNING: Checksum incorrect - sending NAK
+2021-03-06 20:31:51.621 Detail, Node003,   Received: 0x01, 0x18, 0x00, 0x04, 0x00, 0x03, 0x12, 0x32, 0x02, 0x21, 0x74, 0x00, 0x84, 0x00, 0x05, 0x00, 0x09, 0x47, 0xa8, 0xc1, 0xc2, 0x04, 0x00, 0x12, 0x56, 0x00
+2021-03-06 20:31:51.621 Warning, Node003, WARNING: Checksum incorrect - sending NAK
+2021-03-06 20:31:51.623 Detail, contrlr,   Received: 0x01, 0x04, 0x00, 0x01, 0x32, 0x21
+2021-03-06 20:31:51.623 Warning, contrlr, WARNING: Checksum incorrect - sending NAK
+2021-03-06 20:31:51.625 Detail, contrlr,   Received: 0x01, 0x04, 0x00, 0x56, 0x32, 0x21
+2021-03-06 20:31:51.625 Warning, contrlr, WARNING: Checksum incorrect - sending NAK
+2021-03-06 20:31:51.625 Warning, WARNING: Out of frame flow! (0x21).  Sending NAK.
+2021-03-06 20:31:51.625 Warning, WARNING: Out of frame flow! (0x0a).  Sending NAK.
+2021-03-06 20:31:51.625 Warning, WARNING: Out of frame flow! (0x84).  Sending NAK.
+2021-03-06 20:31:51.625 Warning, WARNING: Out of frame flow! (0x00).  Sending NAK.
+2021-03-06 20:31:51.625 Warning, WARNING: Out of frame flow! (0xd5).  Sending NAK.
+2021-03-06 20:31:51.626 Warning, WARNING: Out of frame flow! (0xa8).  Sending NAK.
+2021-03-06 20:31:51.626 Warning, WARNING: Out of frame flow! (0xc2).  Sending NAK.
+2021-03-06 20:31:51.959 Detail, Node004,   Received: 0x01, 0x18, 0x00, 0x04, 0x00, 0x04, 0x56, 0x01, 0x02, 0x05, 0x00, 0x08, 0xe0, 0x4c, 0xa5, 0xf2, 0x71, 0x04, 0x12, 0x56, 0x01, 0x32, 0x02, 0x21, 0x74, 0x00
+2021-03-06 20:31:51.960 Warning, Node004, WARNING: Checksum incorrect - sending NAK
+2021-03-06 20:31:51.961 Warning, WARNING: Out of frame flow! (0xf2).  Sending NAK.
+2021-03-06 20:31:51.964 Detail, contrlr,   Received: 0x01, 0x18, 0x00, 0x21, 0x74, 0x00, 0x0a, 0x59, 0x13, 0x05, 0x08, 0xe0, 0x4c, 0xa5, 0xf2, 0x71, 0x01, 0x18, 0x00, 0x01, 0x32, 0x02, 0x21, 0x74, 0x00, 0x0a
+2021-03-06 20:31:51.964 Warning, contrlr, WARNING: Checksum incorrect - sending NAK
+2021-03-06 20:31:57.119 Warning, WARNING: 500ms passed without reading the rest of the frame...aborting frame read
+2021-03-06 20:31:57.120 Warning, WARNING: Out of frame flow! (0x02).  Sending NAK.
+2021-03-06 20:31:57.121 Warning, WARNING: Out of frame flow! (0x00).  Sending NAK.
+2021-03-06 20:31:57.122 Warning, WARNING: Out of frame flow! (0x00).  Sending NAK.
+2021-03-06 20:31:57.123 Warning, WARNING: Out of frame flow! (0x00).  Sending NAK.
+2021-03-06 20:31:57.123 Warning, WARNING: Out of frame flow! (0x00).  Sending NAK.
+2021-03-06 20:31:57.124 Warning, WARNING: Out of frame flow! (0x00).  Sending NAK.
+2021-03-06 20:31:57.129 Detail, Node018,   Received: 0x01, 0x18, 0x00, 0x04, 0x04, 0x12, 0x01, 0x32, 0x02, 0x21, 0x74, 0x00, 0x08, 0xe2, 0x8c, 0x00, 0x05, 0x00, 0x0a, 0x59, 0x79, 0xe3, 0x01, 0x32, 0x02, 0x21
+2021-03-06 20:31:57.129 Warning, Node018, WARNING: Checksum incorrect - sending NAK
+2021-03-06 20:31:57.133 Detail, contrlr,   Received: 0x01, 0x18, 0x04, 0x00, 0x04, 0x12, 0x56, 0x01, 0x32, 0x02, 0x00, 0x0a, 0x59, 0x13, 0x79, 0xe3, 0x7e, 0x18, 0x00, 0x00, 0x04, 0x00, 0xe2, 0x05, 0x00, 0x0a
+2021-03-06 20:31:57.133 Warning, contrlr, WARNING: Checksum incorrect - sending NAK

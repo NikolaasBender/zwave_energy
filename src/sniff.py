@@ -21,7 +21,7 @@ if six.PY3:
 else:
     from louie import dispatcher
 
-device="/dev/ttyACM1"
+device="/dev/ttyACM0"
 log="Debug"
 sniff=60.0
 

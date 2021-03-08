@@ -16,9 +16,13 @@ from datetime import datetime
 
 import time
 
+
+import rospy
+from zwave_energy.msg import Energy
+
 unique_ids = []
 
-device="/dev/ttyACM1"
+device="/dev/ttyACM0"
 #Define some manager options
 options = ZWaveOption(device, \
   config_path="../config", \
@@ -27,7 +31,7 @@ options.set_console_output(False)
 options.set_logging(False)
 options.lock()
 
-# you may want a global publisher up here
+global_publisher = rospy.Publisher('/global', Energy, queue_size=10)
 
 exit = False
 def sigint_handler(signal, frame):
@@ -36,19 +40,21 @@ def sigint_handler(signal, frame):
 
 # Connect to events
 def value_updated(network, node, value):
-    # node.node_id
-    # value.label
-    # value.data
-    # value.instance
-    print(node.node_id, value, node)
-    # publish messages
+    if value.label == 'Power':
+        msg = Energy()
+        msg.device_id = node.node_id
+        msg.power = value.data
+        #print(node.node_id, value, node)
+        global_publisher.publish(msg)
+
+    # print(node.node_id, value, node)
 
 def main():
-    # initialize ros
-    
+
+    rospy.init_node('zwave_energy', anonymous = True)
 
     # get zwave info
-    network = ZWaveNetwork(options, log=None)
+    network = ZWaveNetwork(options, log = None)
     man = network.manager
     print('setup complete')
     netmanp = network.nodes_to_dict()

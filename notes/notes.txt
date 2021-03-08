@@ -4,7 +4,7 @@ sudo apt-get install --force-yes -y make libudev-dev g++ libyaml-dev
 pip3 install python_openzwave
 
 Make sure you allow python to access the stick
-sudo chmod 666 /dev/ttyACM1
+sudo chmod 666 /dev/ttyACM1 --> no longer necessary with this "sudo adduser $USER dialout"
 
 CONNECT ZWAVES
 https://www.manualslib.com/manual/1592465/Aeon-Labs-Aeotec-Z-Stick-Gen5.html
@@ -25,3 +25,15 @@ Removal-Mode: Deleting/ Removing/Excluding Z-Wave Devices from the Z-Wave Networ
 
 generate key
 cat /dev/urandom | tr -dc '0-9A-F' | fold -w 32 | head -n 1 | sed -e 's/\(..\)/0x\1, /g' -e 's/, $//'
+
+
+api resource
+https://pyozw.readthedocs.io/en/latest/value.html
+
+
+
+
+OPTIONS XML IN SRC FOLDER FOR KEY GEN
+
+
+SEE https://iotpoint.wordpress.com/z-wave-tutorial/

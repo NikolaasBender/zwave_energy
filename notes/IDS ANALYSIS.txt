@@ -1,0 +1,24 @@
+TO GENERATE AN ID ANALYSIS:
+
+
+Run the auto_capture_ids.sh until you've gathered as much data as youd like to test, than kill the terminal.
+
+run parser.py with your file_names and value_id files and watch for a tainted print (this shouldn't take long for reasonably sized loads)
+
+
+
+3/6/20:
+
+First test, by hand, 5 files all matched by preliminary parser file
+
+Run sh script for several hours overnight.
+
+3/7/20:
+
+arrived in morning, ran parser, no tainted files!
+
+For extra testing security, I'm restarting the nuc and reconnecting the aeotech device to determine if there is ID discrepency between days.
+
+** THIS ABOVE CAUSED THREE TAINTED DICTIONARIES! LEFT THIS SET IN FOLDER FOR MANUAL ANALYSIS (could be a fluke?)
+
+Tested again with no restarts and am finding discrepencies. Feel free to cross check.

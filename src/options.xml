@@ -19,10 +19,10 @@
 
   <!-- Should we ask a Node to update its Routing Tables to the Controller Node after 
   adding the Controller to the Nodes Assication Groups. Generally not needed for Z-Wave+ Networks -->
-  <Option name="PerformReturnRoutes" value="false" />
+  <Option name="PerformReturnRoutes" value="true" />
 
   <!-- Should we send a Notification After each Message is sent -->
-  <Option name="NotifyTransactions" value="false" />
+  <Option name="NotifyTransactions" value="true" />
 
   <!-- Maximum Number of Attempts we make to open a Serial Port -->
   <Option name="DriverMaxAttempts" value="5" />
@@ -70,6 +70,6 @@
   <!-- <Option name="ReloadAfterUpdate" value="NEVER" /> -->
   
   <!-- Should OZW include any Instance Labels on ValueID Labels -->
-  <!-- <Option name="IncludeInstanceLabel" value="false" /> -->
+  <Option name="IncludeInstanceLabel" value="true" />
   
 </Options>
