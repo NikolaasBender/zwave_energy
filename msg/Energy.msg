@@ -1,2 +1,0 @@
-uint64 device_id
-float64 power

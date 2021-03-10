@@ -13,12 +13,11 @@ else:
     from louie import dispatcher
 
 from datetime import datetime
-
 import time
-
-
 import rospy
-from zwave_energy.msg import Energy
+from zwave_energy.msg import Combined, Current, Device_power, Power
+import powers 
+import currents
 
 unique_ids = []
 
@@ -31,7 +30,13 @@ options.set_console_output(False)
 options.set_logging(False)
 options.lock()
 
-global_publisher = rospy.Publisher('/global', Energy, queue_size=10)
+current_pubs = []
+power_pubs = []
+dev_pubs = []
+
+def setup():
+    
+
 
 exit = False
 def sigint_handler(signal, frame):

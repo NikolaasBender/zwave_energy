@@ -1,0 +1,20 @@
+72057594093273346 node 3 clamp 1 voltage   <-- shorter id than the other two
+144115188131201282 node 3 clamp 2 voltage
+216172782169129218 node 3 clamp 3 voltage
+72057594110050562 node 4 clamp 1 voltage <-- shorter id than the other two
+144115188147978498 node 4 clamp 2 voltage
+216172782185906434 node 4 clamp 3 voltage
+
+72057594093273218 node 3 clamp 1 power W
+144115188131201154 node 3 clamp 2 power W
+216172782169129090 node 3 clamp 3 power W
+72057594110050434 node 4 clamp 1 power W
+144115188147978370 node 4 clamp 2 power W
+216172782185906306 node 4 clamp 3 power W
+
+72057594093273410 node 3 clamp 1 current
+144115188131201346 node 3 clamp 2 current
+216172782169129282 node 3 clamp 3 current
+72057594110050626 node 4 clamp 1 current
+144115188147978562 node 4 clamp 2 current
+216172782185906498 node 4 clamp 3 current

@@ -1,0 +1,6 @@
+<launch>
+    <param name='current_config' value='currents.json'/>
+    <param name='power config' value='powers.json'/>
+    
+    <node pkg='zwave_energy' type='main.py' name='energy_broadcast'
+</launch>

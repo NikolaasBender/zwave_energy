@@ -49,7 +49,10 @@ find_package(catkin REQUIRED COMPONENTS
 ## Generate messages in the 'msg' folder
 add_message_files(
    FILES
-   Energy.msg
+   Current.msg
+   Power.msg
+   Combined.msg
+   Device_power.msg
 )
 
 ## Generate services in the 'srv' folder
@@ -69,7 +72,8 @@ add_message_files(
 ## Generate added messages and services with any dependencies listed here
 generate_messages(
    DEPENDENCIES
-   std_msgs  # Or other packages containing msgs
+   std_msgs
+   zwave_energy
  )
 
 ################################################
