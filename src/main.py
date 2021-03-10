@@ -30,13 +30,27 @@ options.set_console_output(False)
 options.set_logging(False)
 options.lock()
 
-current_pubs = []
-power_pubs = []
-dev_pubs = []
+dev_pubs = {}
+good_ids = []
 
-def setup():
+power_pub = rospy.Publisher(name='/energy/powers', Power)
+current_pub = rospy.Publisher(name='/energy/currents', Current)
+
+def setup(network):
+    # for n in network.nodes:
+    #     dev_pubs[n] = rospy.Publisher(name="/energy/full_dev_" + str(n), Device_power)
     
+    for k in powers.powers_bac.keys():
+        # dev = powers.powers_bac[k]["dev"]
+        # clamp = powers.powers_bac[k]['clamp']
+        # powers.powers_bac[k]['pub'] = rospy.Publisher(name='/energy/dev_' + str(dev) + '/clamp_' + str(clamp) + '/power')
+        good_ids.append(k)
 
+    for k in currents.currents_bac.keys():
+        # dev = currents.currents_bac[k]["dev"]
+        # clamp = currents.currents_bac[k]['clamp']
+        # currents.currets_bac[k]['pub'] = rospy.Publisher(name='/energy/dev_' + str(dev) + '/clamp_' + str(clamp) + '/current')
+        good_ids.append(k)
 
 exit = False
 def sigint_handler(signal, frame):
@@ -45,14 +59,31 @@ def sigint_handler(signal, frame):
 
 # Connect to events
 def value_updated(network, node, value):
-    if value.label == 'Power':
-        msg = Energy()
-        msg.device_id = node.node_id
-        msg.power = value.data
-        #print(node.node_id, value, node)
-        global_publisher.publish(msg)
+    # data.append([value.parent_id, value.label, value.data_as_string, value.units, value.value_id])
 
-    # print(node.node_id, value, node)
+    # if value.units == 'kWh' and value.label != "Previous Reading":
+    #     kwatth.append([value.parent_id, value.data, value.value_id])
+    if value.units == 'W' and value.label != "Previous Reading":
+        msg = Power
+        id = powers.powers_bac[value.value_id]
+        dev = powers.powers_bac[id]["dev"]
+        clamp = powers.powers_bac[id]['clamp']
+        msg.device_id = dev
+        msg.clamp_num = clamp
+        msg.power = value.data
+        power_pub.publish(msg)
+
+
+    if value.units == 'A' and value.label != "Previous Reading":
+        msg = Current
+        id = currents.currets_bac[value.value_id]
+        dev = currents.currets_bac[id]["dev"]
+        clamp = currents.currets_bac[id]['clamp']
+        msg.device_id = dev
+        msg.clamp_num = clamp
+        msg.current = value.data
+        current_pub.publish(msg)
+
 
 def main():
 
@@ -61,6 +92,7 @@ def main():
     # get zwave info
     network = ZWaveNetwork(options, log = None)
     man = network.manager
+    setup(network)
     print('setup complete')
     netmanp = network.nodes_to_dict()
 
